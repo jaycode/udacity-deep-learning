@@ -1,0 +1,14 @@
+For docker already running and C_DRIVE setup:
+Run the following in command prompt (not from docker-toolbox):
+docker-machine ssh default
+sudo mount -t vboxsf C_DRIVE /C_DRIVE
+docker start [docker_id]
+
+For setting up C_DRIVE:
+Run the following in command prompt (not from docker-toolbox):
+docker-machine ssh default
+sudo mkdir /C_DRIVE
+sudo mount -t vboxsf C_DRIVE /C_DRIVE
+
+Then run the following from docker-toolbox:
+docker run -dit -v /C_DRIVE/Dropbox/Projects/:/notebooks/ -p 8888:8888 tensorflow/tensorflow
